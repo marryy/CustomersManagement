@@ -1,0 +1,177 @@
+html, body {
+  margin: 0;
+  min-height: 100%;
+  color: #454442;
+}
+
+a {
+  text-decoration: none;
+  color: #454442;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+ul li {
+  display: inline-block;
+}
+
+.btn {
+  padding: 0 20px;
+  margin-right: 20px;
+  display: inline-block;
+  background-color: #d8dad8;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #454442;
+  font-size: 20px;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
+}
+
+header {
+  background-color: #efeeec;
+  padding: 20px;
+}
+
+.page-label {
+  line-height: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.fa, .fa.fa-users {
+  font-size: 30px;
+}
+
+header ul li a {
+  padding: 5px 20px;
+  margin-right: 20px;
+  display: inline-block;
+  background-color: #d8dad8;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #454442;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.newCust-form {
+  margin: 60px 0;
+}
+
+.newCust-form div {
+  display: inline-block;
+}
+
+.newCust-form label {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 10px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.newCust-form input {
+  margin-right: 20px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  border-radius: 3px;
+}
+
+main {
+  height: 100%;
+  background-color: #F9faf7;
+  padding: 20px;
+}
+
+.customer-details, .orders {
+  background-color: #e5e4e2;
+  border-radius: 3px;
+  margin: 0 20px 20px 0;
+  width: 260px;
+  border-radius: 3px;
+}
+
+.orders {
+  width: 600px;
+  margin-left: 40px;
+}
+
+.customer-name {
+  margin: 40px 0 10px 40px;
+  font-weight: bold;
+  color: #636260;
+  font-size: 25px;
+}
+
+.orders th {
+  padding: 10px 0;
+  border-bottom: 2px solid #636260;
+}
+
+.orders th,
+.orders td {
+  width: 25%;
+  float: left;
+  box-sizing: border-box;
+  text-align: left;
+}
+.fa.fa-close,
+.fa.fa-pencil-square-o {
+  float: right;
+  margin: 10px 10px 0 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 20px;
+}
+
+.fa.fa-pencil-square-o {
+  margin-right: 5px;
+}
+
+.fa.fa-close:hover,
+.fa.fa-pencil-square-o:hover {
+  cursor: pointer;
+}
+
+.customer-details p {
+  margin: 0;
+}
+
+.customer-details p.name {
+  background: #bdbcba;
+  padding: 10px 10px 5px;
+  font-weight: bold;
+  height: 40px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.customer-details p.address {
+  padding: 10px;
+  height: 50px;
+  line-height: 27px;
+  overflow: hidden;
+}
+
+.customer-details p.view-orders a {
+  padding: 10px;
+  font-weight: bold;
+  display: inline-block;
+}
+footer {
+  background-color: #efeeec;
+  padding: 20px;
+}

@@ -1,0 +1,35 @@
+<form name="customer" class="newCust-form">
+  <div>
+    <label>First name: </label>
+    <input type="text" ng-model="$ctrl.newCust.firstname">
+  </div>
+  <div>
+    <label>Last name: </label>
+    <input type="text" ng-model="$ctrl.newCust.lastname">
+  </div>
+  <div>
+    <label>Address: </label>
+    <input type="text" ng-model="$ctrl.newCust.address">
+  </div>
+  <div>
+    <input type="submit" ng-click="$ctrl.save()" value="save" class="btn">
+  </div>
+</form>
+
+<ul>
+  <li ng-repeat="customer in $ctrl.customers" class="customer-details">
+    <button class="fa fa-close" ng-click="$ctrl.deleteCustomer(customer._id.$oid)"></button>
+    <button class="fa fa-pencil-square-o" ng-click="$ctrl.deleteCustomer(customer._id.$oid)"></button>
+    <p class="name">
+      <label>Name: </label>
+      <span>{{customer.firstname}} {{customer.lastname}}</span>
+    </p>
+    <p class="address">
+      <label>Address: </label>
+      <span>{{customer.address}}</span>
+    </p>
+    <p class="view-orders">
+      <a ng-link="['Customer', {id: customer._id.$oid}]">view orders</a>
+    </p>
+  </li>
+</ul>
