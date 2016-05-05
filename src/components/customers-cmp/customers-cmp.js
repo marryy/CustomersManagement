@@ -1,17 +1,12 @@
 function customersController(customerService, orderService) {
   var $ctrl = this;
+
   this.$routerOnActivate = function() {
-    return $ctrl.getCustomers();
+    $ctrl.getCustomers();
   }
 
   $ctrl.getCustomers = function() {
-    customerService.query(function(customers) {
-      // customers.forEach(function(cust) {
-      //   orderService.get({customerId: "5721b7ecf8c2e776a0ea01f5"}, function(order) {
-      //     console.log( order);
-      //   });
-      // });
-
+    return customerService.query(function(customers) {
       $ctrl.customers = customers;
     });
   }
@@ -33,8 +28,7 @@ function customersController(customerService, orderService) {
   }
 }
 
-angular.module('app.customers', [])
-.component('customersCmp', {
+app.component('customersCmp', {
   templateUrl: 'src/components/customers-cmp/customers-cmp.html',
   controller: customersController
 });

@@ -5,7 +5,7 @@ service.factory('customerService', ['$resource', function($resource){
   return $resource(url, {id: '@_id'} ,{
     update: {
       method: 'PUT'
-    },
+    }
   });
 }]);
 
@@ -14,6 +14,6 @@ service.factory('orderService', ['$resource', function($resource){
   return $resource(url, {id: '@_id'} ,{
     update: {
       method: 'PUT'
-    },
+    }
   });
 }]);

@@ -1,0 +1,17 @@
+<form name="customer" class="newCust-form">
+  <div>
+    <label>First name: </label>
+    <input type="text" ng-model="$ctrl.customer.firstname">
+  </div>
+  <div>
+    <label>Last name: </label>
+    <input type="text" ng-model="$ctrl.customer.lastname">
+  </div>
+  <div>
+    <label>Address: </label>
+    <input type="text" ng-model="$ctrl.customer.address">
+  </div>
+  <div>
+    <input type="submit" ng-click="$ctrl.update($ctrl.customer)" value="Save" class="btn">
+  </div>
+</form>

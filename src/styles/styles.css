@@ -53,8 +53,8 @@ header {
   font-size: 30px;
 }
 
-header ul li a {
-  padding: 5px 20px;
+header ul li a, .btn {
+  padding: 0 20px;
   margin-right: 20px;
   display: inline-block;
   background-color: #d8dad8;
@@ -63,6 +63,8 @@ header ul li a {
   color: #454442;
   font-size: 20px;
   font-weight: bold;
+  height: 35px;
+  line-height: 35px;
 }
 
 .newCust-form {
@@ -71,6 +73,9 @@ header ul li a {
 
 .newCust-form div {
   display: inline-block;
+  margin-right: 20px;
+  height: 35px;
+  line-height: 35px;
 }
 
 .newCust-form label {
@@ -81,12 +86,9 @@ header ul li a {
   line-height: 30px;
 }
 
-.newCust-form input {
-  margin-right: 20px;
-  height: 30px;
-  line-height: 30px;
+.newCust-form .btn {
+  border: none;
   font-size: 20px;
-  border-radius: 3px;
 }
 
 main {
@@ -139,6 +141,7 @@ main {
 
 .fa.fa-pencil-square-o {
   margin-right: 5px;
+  margin-top: 12px;
 }
 
 .fa.fa-close:hover,
@@ -171,6 +174,12 @@ main {
   font-weight: bold;
   display: inline-block;
 }
+
+.customer-details-page .orders {
+  margin-top: 60px;
+  min-height: 100%;
+}
+
 footer {
   background-color: #efeeec;
   padding: 20px;
