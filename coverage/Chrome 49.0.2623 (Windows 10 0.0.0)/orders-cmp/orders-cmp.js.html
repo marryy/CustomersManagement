@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">18.18% </span>
+        <span class="strong">88.24% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/11</span>
+        <span class='fraction'>15/17</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">71.43% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>5/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">18.18% </span>
+        <span class="strong">88.24% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/11</span>
+        <span class='fraction'>15/17</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -67,21 +67,49 @@
 22
 23
 24
-25</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -91,23 +119,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="fstat-no" title="function not covered" >function ordersController(orderService, customerService) {</span>
-<span class="cstat-no" title="statement not covered" >  var $ctrl = this;</span>
-<span class="cstat-no" title="statement not covered" >  this.$routerOnActivate = <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >    return $ctrl.getOrders();</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">function ordersController(customerService) {
+  var $ctrl = this;
+  $ctrl.showEditForm = false;
+&nbsp;
+  this.$routerOnActivate = function() {
+    return $ctrl.getCustomers();
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  $ctrl.getOrders = <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >    orderService.query(<span class="fstat-no" title="function not covered" >function(orders) {</span></span>
-<span class="cstat-no" title="statement not covered" >      $ctrl.orders = orders;</span>
-<span class="cstat-no" title="statement not covered" >      $ctrl.orders.forEach(<span class="fstat-no" title="function not covered" >function(order) {</span></span>
-<span class="cstat-no" title="statement not covered" >        customerService.get({id: order.customerId}, <span class="fstat-no" title="function not covered" >function(customer) {</span></span>
-<span class="cstat-no" title="statement not covered" >          order.customername = customer.firstname + ' ' + customer.lastname;</span>
-        })
-      });
+  $ctrl.getCustomers = function() {
+    return customerService.query(function(customers) {
+      customers.forEach(function(customer) {
+        var sum = 0;
+        for(var i = 0; i &lt; customer.orders.length; i++) {
+          sum += customer.orders[i].price * customer.orders[i].count;
+        }
+        customer.total = sum;
+      })
+      $ctrl.customers = customers;
     });
   }
 &nbsp;
+  this.save = <span class="fstat-no" title="function not covered" >function(cust, order) {</span>
+<span class="cstat-no" title="statement not covered" >    customerService.update({id: cust._id.$oid}, {</span>
+      firstname: cust.firstname,
+      lastname: cust.lastname,
+      address: cust.address,
+      orders: order
+    }, <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >      return $ctrl.getCustomers();</span>
+    });
+  }
 &nbsp;
 }
 &nbsp;
@@ -121,7 +163,7 @@ app.component('ordersCmp', {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 10 2016 12:09:57 GMT+0300 (E. Europe Daylight Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 10 2016 18:31:51 GMT+0300 (E. Europe Daylight Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

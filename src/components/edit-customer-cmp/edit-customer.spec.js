@@ -1,4 +1,4 @@
-describe('customer details component', function () {
+describe('edit customer component', function () {
 var component, $scope, $componentController, $compile;
 
   beforeEach(function () {
@@ -21,7 +21,7 @@ var component, $scope, $componentController, $compile;
     $componentController = _$componentController_;
     $compile = _$compile_;
 
-    component = $componentController('customerDetailsCmp', {$scope: $scope});
+    component = $componentController('editCustomerCmp', {$scope: $scope});
     $httpBackend.when('GET', /customer/).respond({});
   }));
 
@@ -32,6 +32,10 @@ var component, $scope, $componentController, $compile;
       expect(component.$routerOnActivate).toEqual(jasmine.any(Function));
     });
 
+    it('should have a "update" function defined', function() {
+      expect(component.update).toEqual(jasmine.any(Function));
+    });
+
     it('should render the customer on init - routerOnActivate function', function() {
 
       $httpBackend.expect('GET', /customer/).respond(customer);
@@ -40,6 +44,20 @@ var component, $scope, $componentController, $compile;
       $httpBackend.flush();
 
       expect(component.customer.id).toEqual(customer.id);
+    });
+
+    it('should make a put request after calling the "update" function and update the customer', function () {
+      var newCustomer = { "_id" : '572124365873477662843836', "firstname": "Gwert"}
+
+      component = $componentController('editCustomerCmp', {$scope: $scope}, {customer: customer});
+
+      $httpBackend.expectPUT(/customer/).respond(newCustomer);
+
+      component.update(newCustomer);
+
+      $httpBackend.flush();
+
+      expect(component.customer.firstname).toEqual("Gwert");
     });
   });
 });

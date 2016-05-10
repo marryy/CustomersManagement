@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">15.38% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/13</span>
+        <span class='fraction'>10/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/7</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">15.38% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/13</span>
+        <span class='fraction'>10/10</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -71,36 +71,19 @@
 26
 27
 28
-29
-30
-31
-32
-33
-34
-35</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+29</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -111,31 +94,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="fstat-no" title="function not covered" >function editCustController(orderService, customerService) {</span>
-<span class="cstat-no" title="statement not covered" >  var $ctrl = this;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">function editCustController(orderService, customerService) {
+  var $ctrl = this;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.$routerOnActivate = <span class="fstat-no" title="function not covered" >function(next, previous) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var id = next.params.id;</span>
+  this.$routerOnActivate = function(next, previous) {
+    var id = next.params.id;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    customerService.get({ id: id }, <span class="fstat-no" title="function not covered" >function(cust) {</span></span>
-<span class="cstat-no" title="statement not covered" >      $ctrl.customer = cust;</span>
+    customerService.get({ id: id }, function(cust) {
+      $ctrl.customer = cust;
     });
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.save = <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >    customerService.update($ctrl.newCust, <span class="fstat-no" title="function not covered" >function() {</span></span>
-<span class="cstat-no" title="statement not covered" >      $ctrl.getCustomers();</span>
-<span class="cstat-no" title="statement not covered" >      $ctrl.newCust = {};</span>
-    });
-  }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  this.update = <span class="fstat-no" title="function not covered" >function(customer) {</span></span>
-<span class="cstat-no" title="statement not covered" >    customerService.update({id: customer._id.$oid}, {</span>
+  this.update = function(customer) {
+    customerService.update({id: customer._id.$oid}, {
       firstname: customer.firstname,
       lastname: customer.lastname,
-      address: customer.address
-    }, <span class="fstat-no" title="function not covered" >function() {</span>
-      
+      address: customer.address,
+      orders: customer. orders
+    }, function() {
+      $ctrl.customer = customer;
     });
   };
 }
@@ -151,7 +133,7 @@ app.component('editCustomerCmp', {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 10 2016 12:09:57 GMT+0300 (E. Europe Daylight Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 10 2016 18:31:51 GMT+0300 (E. Europe Daylight Time)
 </div>
 </div>
 <script src="../prettify.js"></script>

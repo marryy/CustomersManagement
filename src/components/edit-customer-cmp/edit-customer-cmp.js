@@ -9,13 +9,6 @@ function editCustController(orderService, customerService) {
     });
   }
 
-  this.save = function() {
-    customerService.update($ctrl.newCust, function() {
-      $ctrl.getCustomers();
-      $ctrl.newCust = {};
-    });
-  }
-
   this.update = function(customer) {
     customerService.update({id: customer._id.$oid}, {
       firstname: customer.firstname,
@@ -23,7 +16,7 @@ function editCustController(orderService, customerService) {
       address: customer.address,
       orders: customer. orders
     }, function() {
-
+      $ctrl.customer = customer;
     });
   };
 }
