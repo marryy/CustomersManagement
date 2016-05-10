@@ -1,6 +1,28 @@
 <p class="page-label">All customer orders</p>
-<div ng-repeat="order in $ctrl.orders">
-  <p class="customer-name">{{order.customername}}</p>
+<div ng-repeat="cust in $ctrl.customers">
+  <div class="cust-name">
+    <span class="customer-name">{{cust.firstname}}{{cust.lastname}}</span>
+    <button class="fa fa-pencil-square-o" ng-click="showEditForm = !showEditForm"></button>
+  </div>
+
+  <form name="order" class="newOrder-form" ng-show="showEditForm">
+    <table class="orders">
+      <tr class="header">
+        <th>Product</th>
+        <th>Unit price</th>
+        <th>Quantity</th>
+      </tr>
+      <tr ng-repeat="order in cust.orders">
+        <td><input type="text" ng-model="order.name" /></td>
+        <td><input type="text" ng-model="order.price" /></input></td>
+        <td><input type="text" ng-model="order.count" /></input></td>
+      </tr>
+    </table>
+    <div class="save-btn">
+      <input type="submit" ng-click="$ctrl.save(cust, cust.orders); showEditForm = !showEditForm" value="Save" class="btn">
+    </div>
+  </form>
+
   <table class="orders">
     <tr class="header">
       <th>Product</th>
@@ -8,11 +30,12 @@
       <th>Quantity</th>
       <th>Total</th>
     </tr>
-    <tr ng-repeat="product in order.products">
-      <td>{{product.name}}</td>
-      <td>{{product.price}}</td>
-      <td>{{product.count}}</td>
-      <td>{{product.price * product.count}}</td>
+    <tr ng-repeat="order in cust.orders">
+      <td>{{order.name}}</td>
+      <td>{{order.price}}</td>
+      <td>{{order.count}}</td>
+      <td>{{order.price * order.count}}</td>
     </tr>
+    <tr class="total"><td>{{cust.total}}</td></tr>
   </table>
 </div>

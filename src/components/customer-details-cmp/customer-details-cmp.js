@@ -5,7 +5,7 @@ app.component('customerDetailsCmp', {
 });
 
 
-function customersDetailsController(customerService, orderService) {
+function customersDetailsController(customerService) {
   var $ctrl = this;
 
   this.$routerOnActivate = function(next, previous) {
@@ -13,15 +13,6 @@ function customersDetailsController(customerService, orderService) {
 
     customerService.get({ id: id }, function(cust) {
       $ctrl.customer = cust;
-    });
-
-    //orderService.get({ customerId: parameterID }) - returns all orders?!
-    orderService.query(function(orders) {
-      orders.forEach(function(order) {
-        if(order.customerId === $ctrl.customer._id.$oid) {
-          $ctrl.customer.orders = order.products;
-        }
-      });
     });
   }
 };

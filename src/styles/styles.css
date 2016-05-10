@@ -32,6 +32,7 @@ ul li {
   font-weight: bold;
   height: 35px;
   line-height: 35px;
+  border: none;
 }
 
 header {
@@ -67,6 +68,26 @@ header ul li a, .btn {
   line-height: 35px;
 }
 
+.fa.fa-close,
+.fa.fa-pencil-square-o {
+  float: right;
+  margin: 10px 10px 0 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 20px;
+}
+
+.fa.fa-pencil-square-o {
+  margin-right: 5px;
+  margin-top: 12px;
+}
+
+.fa.fa-close:hover,
+.fa.fa-pencil-square-o:hover {
+  cursor: pointer;
+}
+
 .newCust-form {
   margin: 60px 0;
 }
@@ -97,17 +118,39 @@ main {
   padding: 20px;
 }
 
-.customer-details, .orders {
+.customer-details, .orders, .cust-name, .save-btn {
   background-color: #e5e4e2;
   border-radius: 3px;
-  margin: 0 20px 20px 0;
+  margin: 0 20px 80px 0;
   width: 260px;
   border-radius: 3px;
 }
 
-.orders {
+.cust-name {
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+.cust-name span {
+  margin: 0;
+}
+
+.cust-name .fa {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.orders, .cust-name, .save-btn {
   width: 600px;
   margin-left: 40px;
+}
+
+.save-btn {
+  background: transparent;
+  margin-bottom: 5px;
+  margin-top: -75px;
+  text-align: right;
 }
 
 .customer-name {
@@ -129,26 +172,18 @@ main {
   box-sizing: border-box;
   text-align: left;
 }
-.fa.fa-close,
-.fa.fa-pencil-square-o {
+
+.total {
+  border-top: 2px solid #636260;
+  float: left;
+  width: 100%;
+}
+
+.total td {
   float: right;
-  margin: 10px 10px 0 0;
-  border: none;
-  background-color: transparent;
-  outline: none;
-  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 0;
 }
-
-.fa.fa-pencil-square-o {
-  margin-right: 5px;
-  margin-top: 12px;
-}
-
-.fa.fa-close:hover,
-.fa.fa-pencil-square-o:hover {
-  cursor: pointer;
-}
-
 .customer-details p {
   margin: 0;
 }

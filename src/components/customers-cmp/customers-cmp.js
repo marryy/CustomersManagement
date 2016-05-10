@@ -12,17 +12,13 @@ function customersController(customerService, orderService) {
   }
 
   this.deleteCustomer = function(custId) {
-    customerService.get({ id: custId }, function(custToDel) {
-      $ctrl.cust = custToDel;
-      customerService.delete({id: custId}, function() {
-        $ctrl.getCustomers();
-      });
-    });
+    customerService.delete({id: custId}, function() {});
   };
 
-  this.save = function() {
-    customerService.save($ctrl.newCust, function() {
-      $ctrl.getCustomers();
+  this.save = function(newCust) {
+    return customerService.save(newCust, function() {
+      $ctrl.customers = $ctrl.customers || [];
+      $ctrl.customers.push(newCust);
       $ctrl.newCust = {};
     });
   }

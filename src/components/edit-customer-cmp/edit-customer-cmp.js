@@ -20,9 +20,10 @@ function editCustController(orderService, customerService) {
     customerService.update({id: customer._id.$oid}, {
       firstname: customer.firstname,
       lastname: customer.lastname,
-      address: customer.address
+      address: customer.address,
+      orders: customer. orders
     }, function() {
-      
+
     });
   };
 }
