@@ -78,37 +78,5 @@ var component, $scope, $componentController, $compile;
 
       expect(component.customers[0].firstname).toEqual("Gwert");
     });
-
-    // it('should make a delete request after calling the "deleteCustomer" function', function () {
-    //   var customer = { "_id" : 562843257425475457567836, "firstname": "Asdetu", "lastname": "Strens", "address": "346 Mues Vure, Bsaektfrg"};
-    //   component = $componentController('customersCmp', {$scope: $scope}, {customers: customers});
-    //   console.log("before",component);
-    //   $httpBackend.expect('DELETE', /customers/, customer._id).respond(customer._id);
-    //
-    //   component.deleteCustomer(customer._id);
-    //
-    //   $httpBackend.flush();
-    //
-    //   console.log("after",component);
-    //   expect(component.customers.length).toBe(1);
-    // });
   });
 });
-
-//
-//   it('should delete customer from database on delete()', function() {
-//     var spy = jasmine.createSpy();
-//     var customer = {
-//       name: 'Customer One',
-//       $remove: function (collection, cb) {
-//         spy(this);
-//         cb(this);
-//       }
-//     };
-//
-//     component.delete(customer);
-//
-//     expect(spy).toHaveBeenCalledTimes(1);
-//     expect(spy).toHaveBeenCalledWith(customer);
-//   });
-// });
